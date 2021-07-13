@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocalizacion/Mapa.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -147,7 +148,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         21.1331177,-101.6943133);
                   });
                 }
-            )
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Mapa(posicionActual)));
+                },
+                child: Text("Ir al mapa"))
           ],
         ),
       ),
